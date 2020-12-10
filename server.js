@@ -24,7 +24,13 @@ const PORT = process.env.PORT || 3001;
 // Making the public folder accessible to the client side
 app.use(express.static("public"));
 
-// Unwrapping client data to make it readable for Express server to use.
-// (stored in req.body)
+// Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Set Handlebars
+const expHbs = require("express-handlebars");
+
+app.engine("handlebars", expHbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+

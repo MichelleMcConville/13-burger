@@ -2,5 +2,5 @@
 const connection = require("../config/connection.js");
 
 selectAll()
-create()
-devour()
+insertOne()
+updateOne()

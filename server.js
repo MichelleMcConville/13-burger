@@ -43,3 +43,14 @@ app.set("view engine", "handlebars");
 const routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
+
+// =============================================================================
+// LISTENER
+// The below code "starts" the Express server
+// =============================================================================
+
+// Opening listeners (tunnel) to use back & forth
+app.listen(PORT, function () {
+    console.log("Server is listening on PORT ", PORT);
+  });
+  

@@ -1,5 +1,4 @@
 const express = require("express");
-const { end } = require("../config/connection.js");
 
 const router = express.Router();
 

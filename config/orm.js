@@ -60,7 +60,24 @@ const orm = {
     });
   },
 
-  updateOne() {},
+  updateOne(table, objColValues, condition, cb) {
+    const qs = "UPDATE " + table;
+
+    qs += " SET ";
+    qs += objColSql(objColValues);
+    qs += " WHERE ";
+    qs += condition;
+
+    console.log(qs);
+
+    connection.query(qs, (err, result) => {
+      if (err) { throw err; }
+      cb(result);
+    });
+  },
+
+  
+
 };
 
 module.exports = orm;

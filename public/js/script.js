@@ -1,5 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded
 $(function() {
+    
   $(".change-devour").on("click", (event) => {
       const id = $(this).data("id");
       const newDevour = $(this).data("newdevour");
@@ -34,6 +35,17 @@ $(function() {
     );
   });
 
-  
+  $(".delete-burger").on("click", (event) => {
+    const id = $(this).data("id");
 
-})
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted cat", id);
+        location.reload();
+      }
+    );
+  });
+
+});

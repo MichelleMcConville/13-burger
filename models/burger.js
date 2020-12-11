@@ -14,10 +14,11 @@ const burger = {
     orm.updateOne("burgers", objColValues, condition, (res) => { cb(res); });
   },
 
+  // Bonus delete f(x)
   delete(condition, cb) {
     orm.delete("burgers", condition, (res) => { cb(res); });
   }
-  
+
 }
 
 module.exports = burger;

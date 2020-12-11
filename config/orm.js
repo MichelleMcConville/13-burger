@@ -37,14 +37,28 @@ const orm = {
   selectAll(tableInput, cb) {
     const qs = "SELECT * FROM " + tableInput + ";";
     connection.query(qs, (err, result) => {
-      if (err) {
-        throw err;
-      }
+      if (err) { throw err; }
       cb(result);
     });
   },
 
-  insertOne() {},
+  insertOne(table, cols, values, cb) {
+    const qs = "INSERT INTO " + table;
+
+    qs += " (";
+    qs += cols.toString();
+    qs += ") ";
+    qs += "VALUES (";
+    qs += printQuestionMarks(values.length);
+    qs += ") ";
+
+    console.log(qs);
+
+    connections.query(qs, values, (err, result) => {
+      if (err) { throw err; }
+      cb(result);
+    });
+  },
 
   updateOne() {},
 };

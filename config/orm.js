@@ -5,7 +5,7 @@ const connection = require("../config/connection.js");
 function printQuestionMarks(num) {
   var arr = [];
   for (var i = 0; i < num; i++) {
-      arr.push("?");
+    arr.push("?");
   }
   return arr.stString();
 }
@@ -19,7 +19,7 @@ function objToSql(ob) {
     // Check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
       // if string with spaces, add quotations (Turkey Burger => 'Turkey Burger')
-      if (typeof value === "string" && value.indexOf(" ") >=0) {
+      if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
       // e.g. {name: 'Turkey Burger'} => ["name='Turkey Burger'"]
@@ -33,9 +33,20 @@ function objToSql(ob) {
 
 // Object for all SQL statement f(x)s
 const orm = {
-  selectAll() {},
+
+  selectAll(tableInput, cb) {
+    const qs = "SELECT * FROM " + tableInput + ";";
+    connection.query(qs, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+
   insertOne() {},
+
   updateOne() {},
-}
+};
 
 module.exports = orm;

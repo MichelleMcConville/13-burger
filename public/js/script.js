@@ -16,6 +16,24 @@ $(function() {
       );
    });
 
-   
+  $(".create-form").on("submit", (event) => {
+    event.preventDefault();
+    const newBurger = {
+      burger_name: $("#bgr").val().trim(),
+      devoured: $("[burger_name=devoured]:checked").val().trim()
+    }
+
+    $.ajax("/api/burgers", {
+      type: "POST",
+      data: newBurger
+    }).then(
+      function() {
+        console.log("created new burger");
+        location.reload();
+      }
+    );
+  });
+
+  
 
 })

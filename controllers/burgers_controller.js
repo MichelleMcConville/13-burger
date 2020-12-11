@@ -29,7 +29,13 @@ router.put("/api/burgers/:id", (req, res) => {
   });
 });
 
-// router.update() {}; ???
+// Optional deleted f(x)
+// router.update("api/burgers/:id", (req, res) => {
+//   const condition = "id = " + req.params.id;
+//   burgers.delete(condition, function(results) {
+//     if (results.effectedRows === 0) {return res.status(404).end(); } else { res.status(200).end(); }
+//   });
+// });
 
 // Export routes for server.js to use
 module.exports = router;

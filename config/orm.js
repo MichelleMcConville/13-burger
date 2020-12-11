@@ -76,7 +76,18 @@ const orm = {
     });
   },
 
-  
+  // Optional delete f(x)
+  // delete(table, condition, cb) {
+  //   const qs = "DELETE FROM " + table;
+
+  //   qs += " WHERE ";
+  //   qs += condition;
+
+  //   connection.query(qs, (err, result) => {
+  //     if (err) { throw err; }
+  //     cb(result);
+  //   });
+  // }
 
 };
 

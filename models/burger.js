@@ -6,7 +6,7 @@ selectAll(cb) {
   orm.selectAll("burgers", (res) => { cb(res); });
 },
 
-insertOne: function(cols, values, cb) {
+insertOne(cols, values, cb) {
   orm.insertOne("burgers", cols, values, (res) => { cb(res); });
 },
 

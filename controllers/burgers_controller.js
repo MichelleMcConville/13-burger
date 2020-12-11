@@ -29,7 +29,7 @@ router.put("/api/burgers/:id", (req, res) => {
   });
 });
 
-// Optional deleted f(x)
+// Optional delete f(x)
 // router.delete("api/burgers/:id", (req, res) => {
 //   const condition = "id = " + req.params.id;
 //   burgers.delete(condition, function(results) {

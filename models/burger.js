@@ -10,7 +10,9 @@ insertOne(cols, values, cb) {
   orm.insertOne("burgers", cols, values, (res) => { cb(res); });
 },
 
-updateOne: function() {},
+updateOne(objColValues, condition, cb) {
+  orm.updateOne("burgers", objColValues, condition, (res) => { cb(res); });
+},
 
 }
 

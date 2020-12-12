@@ -6,16 +6,19 @@ const burger = {
     orm.selectAll("burgers", (res) => { cb(res); });
   },
 
-  insertOne(cols, values, cb) {
-    orm.insertOne("burgers", cols, values, (res) => { cb(res); });
+  insertOne(burger_name, cb) {
+    console.log(this);
+    orm.insertOne("burgers", ["burger_name", "devoured"], [burger_name, false], cb);
   },
 
-  updateOne(objColValues, condition, cb) {
-    orm.updateOne("burgers", objColValues, condition, (res) => { cb(res); });
+  updateOne(id, cb) {
+    let condition = `id = ${id}`;
+    orm.updateOne("burgers", {devoured: true}, condition, cb);
   },
 
   // Bonus delete f(x)
-  delete(condition, cb) {
+  delete(id, cb) {
+    let condition = `id = ${id}`;
     orm.delete("burgers", condition, (res) => { cb(res); });
   }
 

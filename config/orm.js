@@ -64,7 +64,7 @@ const orm = {
   },
 
   // Bonus delete f(x)
-  delete(table, condition, cb) {
+  deleteOne(table, condition, cb) {
     var qs = `DELETE FROM ${table} WHERE ${condition}`;
     connection.query(qs, (err, result) => {
       if (err) throw err;

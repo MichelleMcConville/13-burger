@@ -17,9 +17,9 @@ const burger = {
   },
 
   // Bonus delete f(x)
-  delete(id, cb) {
+  deleteOne(id, cb) {
     let condition = `id = ${id}`;
-    orm.delete("burgers", condition, (res) => { cb(res); });
+    orm.deleteOne("burgers", condition, (res) => { cb(res); });
   }
 
 }

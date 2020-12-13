@@ -1,6 +1,4 @@
-<li>
-  <h3 class="burger-eaten">{{burger_name}}</h3>
-
-  {{!-- Clean Plate --}}
-	<button class="delete-burger" btn data-id="{{this.id}}">DELETE!</button>
-</li>
+<ul>
+	{{burger_name}}
+	<button class="change-if-eaten" data-id="{{id}}" data-if-eaten="{{devoured}}">DEVOUR!</button>
+</ul>

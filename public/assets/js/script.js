@@ -3,14 +3,14 @@ $(function() {
 
   $(".change-devour").on("click", (event) => {
       const id = $(this).data("id");
-      const newDevour = $(this).data("newdevour");
-      const newDevourState = { devoured: "true" };
+      const hasEaten = $(this).data("hasEaten");
+      const hasEatenState = { devoured: "true" };
 
       $.ajax("api/burgers/" + id, {
           type: "PUT"
-        , data: newDevourState
+        , data: hasEatenState
       }).then(() => {
-        console.log("changed devour to", newDevour);
+        console.log("changed devour to", hasEaten);
         location.reload();
       });
    });
@@ -37,7 +37,7 @@ $(function() {
     $.ajax("/api/burgers/" + id, {
       type: "DELETE"
     }).then(() => {
-      console.log("deleted cat", id);
+      console.log("deleted burger", id);
       location.reload();
     });
   });

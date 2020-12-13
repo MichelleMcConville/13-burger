@@ -1,5 +1,6 @@
-INSERT INTO burgers (burger_name)
+INSERT INTO burgers (burger_name, devoured)
 VALUES
-    ('Beef Burger')
-  , ('Turkey Burger')
-  , ('Veggie Burger');
+    ('Beef Burger',       0)
+  , ('Turkey Burger',     0)
+  , ('Veggie Burger',     0)
+  , ('Impossible Burger', 1);

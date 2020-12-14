@@ -1,4 +1,4 @@
-const connection = require("../config/connection.js");
+const connection = require("./connection");
 
 function printQuestionMarks(num) {
   var arr = [];
@@ -31,15 +31,15 @@ const orm = {
 
   // Create
   insertOne: (table, cols, values, cb) => {
-    // let queryString = `INSERT INTO ${table} (${column.toString()}) VALUES (${printQuestionMarks(values.length)})`;
-    var qs = "INSERT INTO " + table;
+    let queryString = `INSERT INTO ${table} (${column.toString()}) VALUES (${printQuestionMarks(values.length)})`;
+    // var qs = "INSERT INTO " + table;
 
-    qs += " (";
-    qs += cols.toString();
-    qs += ") ";
-    qs += "VALUES (";
-    qs += printQuestionMarks(values.length);
-    qs += ") ";
+    // qs += " (";
+    // qs += cols.toString();
+    // qs += ") ";
+    // qs += "VALUES (";
+    // qs += printQuestionMarks(values.length);
+    // qs += ") ";
 
     console.log(qs);
 
@@ -51,13 +51,13 @@ const orm = {
 
   // Update
   updateOne(table, objColValues, condition, cb) {
-    // let qs = `UPDATE ${table} SET ${objToSql(objColValues)} WHERE ${condition}`;
-    var qs = "UPDATE " + table;
+    let qs = `UPDATE ${table} SET ${objToSql(objColValues)} WHERE ${condition}`;
+    // var qs = "UPDATE " + table;
 
-    qs += " SET ";
-    qs += objToSql(objColValues);
-    qs += " WHERE ";
-    qs += condition;
+    // qs += " SET ";
+    // qs += objToSql(objColValues);
+    // qs += " WHERE ";
+    // qs += condition;
 
     console.log(qs);
 

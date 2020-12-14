@@ -9,7 +9,7 @@ $(function() {
 
       $.ajax("api/burgers/" + id, {
           type: "PUT"
-        , data: hasEatenState
+        // , data: hasEatenState
       }).then(() => {
         // console.log("changed devour to", hasEaten);
         console.log("changed devour to", id);
@@ -32,7 +32,7 @@ $(function() {
     });
   });
 
-  (".delete-burger").on("click", (event) => {
+  $(".delete-burger").on("click", (event) => {
    let id = $(this).data("id");
 
    $.ajax("/api/burgers/" + id, { 

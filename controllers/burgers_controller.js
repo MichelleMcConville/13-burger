@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const burger = require("../models/burger.js");
 
-router.get("/", (req, res) => {
+router.get("/", (_req, res) => {
   burger.selectAll((data) => {
-    var hbsObject = { burgers: data };
+    let hbsObject = { burgers: data };
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
@@ -18,18 +18,18 @@ router.post("/api/burgers", (req, res) => {
 });
 
 router.put("/api/burgers/:id", (req, res) => {
-  var condition =  "id = " + req.params.id;
+  let condition =  "id = " + req.params.id;
   console.log("condition", condition);
-  burger.updateOne({ devoured: req.body.devoured }, condition, (result) => {
+  burger.updateOne({ devoured: true }, condition, (result) => {
     if (result.changedRows == 0) { return res.status(404).end(); } else { res.status(200).end(); }
   })
 });
 
 // Bonus delete f(x)
 router.delete("api/burgers/:id", (req, res) => {
-  var condition = "id = " + req.params.id;
+  let condition = "id = " + req.params.id;
   burger.deleteOne(condition, (result) => {
-    if (results.effectedRows === 0) {return res.status(404).end(); } else { res.status(200).end(); }
+    if (result.effectedRows === 0) {return res.status(404).end(); } else { res.status(200).end(); }
   });
 });
 

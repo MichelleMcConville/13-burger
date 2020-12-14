@@ -11,7 +11,7 @@ function printQuestionMarks(num) {
 function objToSql(ob) {
   var arr = [];
   for (var key in ob) {
-    const value = ob[key];
+    var value = ob[key];
     if (Object.hasOwnProperty.call(ob, key)) {
       if (typeof value === "string" && value.indexOf(" ") >= 0) { value = "'" + value + "'"; }
       arr.push(key + "=" + value);
@@ -29,7 +29,9 @@ const orm = {
     });
   },
 
+  // Create
   insertOne: (table, cols, values, cb) => {
+    // let queryString = `INSERT INTO ${table} (${column.toString()}) VALUES (${printQuestionMarks(values.length)})`;
     var qs = "INSERT INTO " + table;
 
     qs += " (";
@@ -47,7 +49,9 @@ const orm = {
     });
   },
 
+  // Update
   updateOne(table, objColValues, condition, cb) {
+    // let qs = `UPDATE ${table} SET ${objToSql(objColValues)} WHERE ${condition}`;
     var qs = "UPDATE " + table;
 
     qs += " SET ";
@@ -63,7 +67,7 @@ const orm = {
     });
   },
 
-  // Bonus delete f(x)
+  // Delete f(x) Bonus
   deleteOne(table, condition, cb) {
     var qs = `DELETE FROM ${table} WHERE ${condition}`;
     connection.query(qs, (err, result) => {

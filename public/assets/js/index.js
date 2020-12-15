@@ -4,14 +4,11 @@ $(function() {
   $(".eat-burger").on("click", function(event) {
       console.log("click working")
       let id = $(this).data("id");
-      // const hasEaten = $(this).data("hasEaten");
-      // const hasEatenState = { devoured: hasEaten};
       console.log(id);
+      
       $.ajax("/api/burgers/" + id, {
           type: "PUT"
-        // , data: hasEatenState
       }).then(() => {
-        // console.log("changed devour to", hasEaten);
         console.log("changed devour to", id);
         // Reload the page to get the updated list
         location.reload();
@@ -22,6 +19,7 @@ $(function() {
     event.preventDefault();
     let newBurger = { burger_name: $("#bgr").val().trim(), devoured: 0 }
     console.log(newBurger);
+
     $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger

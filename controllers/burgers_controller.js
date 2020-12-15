@@ -26,8 +26,9 @@ router.put("/api/burgers/:id", (req, res) => {
 });
 
 // Bonus delete f(x)
-router.delete("api/burgers/:id", (req, res) => {
+router.delete("/api/burgers/:id", (req, res) => {
   let condition = "id = " + req.params.id;
+  console.log(condition);
   burger.deleteOne(condition, (result) => {
     if (result.effectedRows === 0) {return res.status(404).end(); } else { res.status(200).end(); }
   });

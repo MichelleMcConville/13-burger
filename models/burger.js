@@ -24,7 +24,7 @@ const burger = {
   deleteOne(condition, cb) {
   //2 deleteOne(id, cb) {
     //2 let condition = `id = ${id}`;
-    ("burgers", condition, (res) => { cb(res); });
+    orm.deleteOne("burgers", condition, (res) => { cb(res); });
     //2 ("burgers", condition, (res) => { cb(res); });
   },
 

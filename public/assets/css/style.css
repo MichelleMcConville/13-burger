@@ -1,41 +1,60 @@
 body {
-  background: url("../img/burgerBg.jpg") no-repeat center fixed;
+  /* background: url("../img/burgerBg.jpg") fixed; */
+  text-align: center;
+}
+
+.row {
+  border: 2px, solid, hotpink;
 }
 
 footer {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 1rem;
 }
 
 h1 {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  font-size: 50px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-li {
-  padding: 5px;
-  margin: 5px;
+h2 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-ul {
-  margin-bottom: 30px;
+ul, li {
+  padding: 0;
+  margin: 0;
 }
-  
+
+#bgr {
+  padding: .5rem;
+  margin: .5rem;
+  border-radius: .5rem;
+}
+
 .create-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
+  padding: 0;
+  margin: 0;
 }
+
+/* .demo_wrap {
+  background: url("../img/burgerBg.jpg") fixed;
+  opacity: 0.2;
+} */
   
 .form-group {
-  margin-bottom: 5px;
+  margin: .5rem;
 }
 
 .label {
   font-weight: bold;
+  margin: 1rem;
 }
 
 button {
-  border-radius: 5px;
+  border-radius: .5rem;
 }

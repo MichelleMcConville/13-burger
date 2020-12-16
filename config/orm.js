@@ -32,8 +32,7 @@ const orm = {
   // Create
   insertOne: (table, column, values, cb) => {
     let qs = `INSERT INTO ${table} (${column.toString()}) VALUES (${printQuestionMarks(values.length)})`;
-    console.log(qs);
-
+    
     connection.query(qs, values, (err, result) => {
       if (err) { throw err; }
       cb(result);
@@ -43,8 +42,7 @@ const orm = {
   // Update
   updateOne(table, objColValues, condition, cb) {
     let qs = `UPDATE ${table} SET ${objToSql(objColValues)} WHERE ${condition}`;
-    console.log(qs);
-
+    
     connection.query(qs, (err, result) => {
       if (err) { throw err; }
       cb(result);

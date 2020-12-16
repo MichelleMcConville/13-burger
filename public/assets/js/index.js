@@ -43,3 +43,12 @@ $(function() {
   });
 
 });
+
+function checkText() {
+  console.log($("#bgr").val().trim())
+  if($("#bgr").val().trim() === "") { 
+    document.getElementById("submit-btn").disabled = true; 
+  } else { 
+    document.getElementById("submit-btn").disabled = false;
+  }
+}

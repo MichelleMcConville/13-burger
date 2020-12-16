@@ -26,7 +26,7 @@ Create a simple full stack burger logger app using MySQL, Node, Express, Handleb
 ## Installation 🛠️ <a name="installation"></a>
 
 ```node
-Type the following two npm commands separately in the Integrated Terminal:
+Type the following two npm commands separately inside the Integrated Terminal:
   1. npm init -y
   2. npm i express express-handlebars mysql
 ```

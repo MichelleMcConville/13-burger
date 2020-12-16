@@ -1,43 +1,50 @@
 <div class="container">
   <div class="row">
 
-  <div class="demo_wrap">
-    <h1>Eat-Da-Burger!</h1>
-  </div>
-
-  <img src="/assets/img/burger2.png" alt="burger" width="150" height="150">
-
-  <h2>Create Your Burger!</h2>
-
-  <form class="create-form">
-    <div class="form-group">
-      <label for="bgr">Create Your Burger:</label><br>
-      <input type="text" id="bgr" name="name"><br>
-      <button type="submit">Add Burger</button>
+    <div class="jumbotron">
+      <h1>Eat-Da-Burger!</h1>
+      <br>
+      <img id="dbl-bgr" src="/assets/img/burger2.png" alt="burger" width="150" height="150">
     </div>
-  </form>
 
-  <hr>
-  <h2>Burger Served!</h2>
+    <h2>Create 🍔 Your Burger!</h2>
 
-  <ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burger-block devoured=false}}
-    {{/unless}}
-    {{/each}}
-  </ul>
+    <form class="create-form">
+      <div class="form-group">
+        <textarea name="name" id="bgr" onkeyup="checkText()" cols="30" rows="1" placeholder="Enter your burger here"></textarea>
+        <br><br>
+        <button id="submit-btn" type="submit" disabled>ADD BURGER 🍔</button>
+      </div>
+    </form>
 
- <hr>
- <h2>Burgers Eaten!</h2>
+    <hr>
+    <h2>Burger 🍽️ Served!</h2>
 
-  <ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> eaten-block devoured=true}}
-    {{/if}}
-    {{/each}}
-  </ul>
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burger-block devoured=false}}
+      {{/unless}}
+      {{/each}}
+    </ul>
+
+    <hr>
+    <h2>Burgers 🗑️ Devoured!</h2>
+
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> eaten-block devoured=true}}
+      {{/if}}
+      {{/each}}
+    </ul>
   
   </div>
+
+  <footer class="row">
+    <div class="col-lg">
+      <p id="footer">©️ 2020 | Designed & built by Michelle McConville</p>
+    </div>
+  </footer>
+
 </div>

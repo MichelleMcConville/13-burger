@@ -8,7 +8,7 @@
 
 ## Description
 
-Create a simple full stack burger logger app using MySQL, Node, Express, Handlebars, ORM & Heroku
+A simple full stack burger logger app using MySQL, Node, Express, Handlebars, ORM & Heroku
 
 | ***Screenshot***              |
 | :---------------------------: |
